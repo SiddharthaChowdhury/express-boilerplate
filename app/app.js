@@ -18,8 +18,8 @@ var express 		= require('express'),
 		database: 'dib'
 	};
 
-var models 			= require('./conf/conf.models')('MongoDB');
-var routes 			= require('./conf/route')(express.Router(), models)
+var bundles			= require('./conf/conf.bundles');
+var routes 			= require('./conf/route')(express.Router(), bundles.models('MongoDB'), bundles.controllers())
 var logDirectory 	= path.join(__dirname, 'log'),
 	publicDirectory = path.join(__dirname, 'public');
 
