@@ -11,9 +11,11 @@ var express 		= require('express'),
 	routes 			= require('./conf/route')(express.Router()),
 	dbconn	 		= require('./conf/connection'),
 	dbconfig		= {
-		connector: 'MongoDB',
+		connector: 'MongoDB', // use 'MongoDB' or 'MySQL'
 		username: 'test',
 		password: 'test',
+		host: '',
+		port: '',
 		database: 'dib'
 	};
 
@@ -75,6 +77,9 @@ p1.then(()=>{
 	switch(dbconfig.connector){
 		case 'MongoDB':
 			dbconn.mongoConnection(dbconfig);
+			break;
+		case 'MySQL':
+			dbconn.mysqlConnection(dbconfig);	
 			break;
 		default:
 			console.log("No database selected! Please add correct connector.")
