@@ -1,6 +1,6 @@
 module.exports = ($) =>{
 /*
-	Please define the nodes below.
+*	Please define the nodes below.
 */
 
 	$.get('/', function(req, res){
@@ -9,6 +9,6 @@ module.exports = ($) =>{
 
 
 /*
-	Routes defined above
+*	 Define routes above
 */
 return $;}
