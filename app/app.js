@@ -8,7 +8,7 @@ var express 		= require('express'),
 	fs 				= require('fs'),
 	rfs 			= require('rotating-file-stream'),
 	bodyParser		= require('body-parser'),
-	dbconn	 		= require('./conf/conf.connection'),
+	dbconn	 		= require('./conf/sys.connection'),
 	dbconfig		= {
 		connector: 'MongoDB', // use 'MongoDB' or 'MySQL'
 		username: 'test',
@@ -18,7 +18,7 @@ var express 		= require('express'),
 		database: 'dib'
 	};
 
-var bundles			= require('./conf/conf.bundles');
+var bundles			= require('./conf/sys.bundles');
 var routes 			= require('./conf/route')(express.Router(), bundles.models('MongoDB'), bundles.controllers())
 var logDirectory 	= path.join(__dirname, 'log'),
 	publicDirectory = path.join(__dirname, 'public');
