@@ -1,0 +1,302 @@
+
+/* ===== Color palette / theme ================
+	http://colorpalettes.net/color-palette-3068/
+	-----------------------
+	Index
+	-----------------------
+	Dark 		: #351F39 [malbec];
+	Semi-dark 	: #726A94 [jacaranda];
+	Medium		: #709FB0 [bolivia];
+	Semi-light	: #A0C1B8 [azul verde];
+	Light 		: #F4E8C1 [ivory];
+	-----------------------
+*/
+
+body {
+  font-family: Sans-Serif;
+}
+/* Bootstrap override */
+.tooltip{
+    z-index: 9999 !important;
+}
+.btn{
+	border-radius: 1px;
+}
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th{ 
+    border-top: 0px !important; 
+}
+.left-nav ul{
+    list-style: none;
+    margin-top: 50px;
+}
+.left-nav ul li{
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #726A94;
+    font-weight: 400;
+}
+.hide-this{display: none;}
+.body-content{
+    border-left: 2px solid #f1f1f1;}
+.active-tab{background-color: silver;}
+.active-tab-text{margin-bottom: 30px;}
+.image-filters{margin-bottom: 5px;}
+#search-image{
+    border: 1px solid silver;
+    padding: 4px 10px;
+}
+.image-thumb-cont{
+    margin-top: 20px;
+    /*height: 80vh;*/
+    border: 2px solid #f1f1f1;
+    /*border-left: none;*/
+    /*border-right: 2px solid #f1f1f1;*/
+    padding: 15px;
+    /*overflow-y: scroll;*/
+}
+select.image-thumb-sort{
+    background-color: #fff;
+    padding: 4px 10px;
+}
+.thumbnail-panel{
+    text-align: justify;
+    max-height:75vh;
+    overflow-y:auto;
+}
+.img-thumbnail{ cursor: pointer;}
+.img-thumbnail:hover {opacity: 0.7;}
+.chosen-image{
+    max-width: 200px;
+    max-height: 300px;
+}
+table#image-meta tr td{padding: 0px 5px;}
+.edit-prev-del{
+    margin: 12px;
+    text-align: center;
+}
+.image-meta-edit{
+    margin: 12px;
+    display: none;
+}
+.form-control{border-radius: 1px !important;}
+
+#upload-section{
+    height: 70vh;
+    /*background-color: #f1f1f1;*/
+    margin-top: 150px;
+}
+/*------ THUMKBNAIL -------*/
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   
+   -webkit-column-count: 4;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    4;
+   -moz-column-gap:      0px;
+   column-count:         4;
+   column-gap:           0px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         ;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+.croppedCanvasContainer{
+    max-height: 600px;
+    overflow: auto;
+}
+
+#submit-image{
+  background-color: #088A4B;
+  color: #fff;
+  border: none;
+}
+
+/*== SEARCH BOX ==*/
+.top-level-menu-right ul{
+    margin-bottom: 0px !important;
+    list-style-type: none;
+}
+.top-level-menu-right ul li{
+    display: inline-block;
+}
+.top-level-menu-right ul li input{
+    background-color: #c0c0c0;
+    border:none;
+    outline: none;
+    font-size: 12px;
+    font-weight: 200;
+    padding: 6px 10px 6px 10px;
+    border-radius: 3px;
+    width: 240px;
+}
+.search-btn{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ======  EDIT MODAL ======*/
+.si_modalWrapper ul.crop-tool{ list-style:none; padding: 5px 0px;}
+.si_modalWrapper ul.crop-tool li { 
+    display: inline-block; 
+    background-color: #333;
+    border-radius: 3px;
+    padding: 8px 0px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.si_modalWrapper ul.crop-tool li a { 
+    text-decoration: none; 
+    color: #f1f1f1;
+    padding: 10px;
+}
+.si_modalWrapper ul.crop-tool li a:hover{ color: #81F79F; }
+
+.si_modalWrapper ul.crop-tool2{ list-style:none; padding: 5px 0px;}
+.si_modalWrapper ul.crop-tool2 li { 
+    display: inline-block; 
+    background-color: #333;
+    border-radius: 3px;
+    padding: 8px 0px;
+}
+.si_modalWrapper ul.crop-tool2 li a { 
+    text-decoration: none; 
+    color: #f1f1f1;
+    padding: 10px;
+}
+.si_modalWrapper ul.crop-tool2 li a:hover{ color: #81F79F; }
+#cropCanvas{
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.si_modalWrapper{display: none;}
+
+/*============== IMAGE VIEWER ================*/
+/* Style the Image Used to Trigger the Modal */
+/*#viewable {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#viewable:hover {opacity: 0.7;}*/
+
+/* The Modal (background) */
+.viewer-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.viewer-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#viewer-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.viewer-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The viewer-Close Button */
+.viewer-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.viewer-close:hover,
+.viewer-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .viewer-content {
+        width: 100%;
+    }
+}

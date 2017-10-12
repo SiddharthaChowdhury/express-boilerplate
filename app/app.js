@@ -1,4 +1,5 @@
-var appName         = 'Default-app'
+var appName  = 'Default-app';
+__root		 = __dirname; //(need to be more careful here)
 var express 		= require('express'),
 	app 			= express(),
 	http 			= require('http'),
@@ -22,6 +23,7 @@ var bundles			= require('./conf/sys.bundles');
 var routes 			= require('./conf/route')(express.Router(), bundles.models('MongoDB'), bundles.controllers())
 var logDirectory 	= path.join(__dirname, 'log'),
 	publicDirectory = path.join(__dirname, 'public');
+	assetsDirectory = path.join(__dirname, 'assets');
 
 
 /*
@@ -41,7 +43,8 @@ var accessLogStream = rfs('access.log', { // create a rotating write stream
 app.use(morgan('dev', {stream: accessLogStream}))
 app.use(bodyParser.json({limit: '2mb'}));                           // 2mb file upload limit
 app.use(bodyParser.urlencoded({limit: '2mb', extended: true}));     // 2mb file upload limit
-app.use(express.static(publicDirectory))
+app.use('/public', express.static(publicDirectory));				// Upload or Public dir
+app.use(express.static(assetsDirectory));							// Assets directory like JS and CSS
 app.use('/', routes);
 app.use(function(req, res, next) {
   	var err = new Error('Not Found');
@@ -49,6 +52,9 @@ app.use(function(req, res, next) {
   	next(err);
 });
 
+app.set('views', __dirname+'/views');
+app.set('view engine', 'ejs');
+app.set('x-powered-by', 'Austin4Silvers');
 /*
 	1. Firing up the server
 	2. Handling error and notifying the event
