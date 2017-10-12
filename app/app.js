@@ -46,13 +46,13 @@ app.use(bodyParser.urlencoded({limit: '2mb', extended: true}));     // 2mb file 
 app.use('/public', express.static(publicDirectory));				// Upload or Public dir
 app.use(express.static(assetsDirectory));							// Assets directory like JS and CSS
 app.use('/', routes);
-app.use(function(req, res, next) {
-  	var err = new Error('Not Found');
-  	err.status = 404;
-  	next(err);
-});
+// app.use(function(req, res, next) {
+//   	var err = new Error('Not Found');
+//   	err.status = 404;
+//   	next(err);
+// });
 
-app.set('views', __dirname+'/views');
+app.set('views', __dirname+'/Views');
 app.set('view engine', 'ejs');
 app.set('x-powered-by', 'Austin4Silvers');
 /*

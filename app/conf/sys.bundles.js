@@ -11,8 +11,6 @@ var bundles = {
                 excludeDirs :  /^\.(git|svn)$/,
                 optional    :  true
             });
-            // console.log("-------------------------------------- LOADING models.")
-            // console.log(models)
             var Model = {};
             for(var i in models){
                 var x = new mongoose.Schema(models[i])
@@ -27,13 +25,6 @@ var bundles = {
             filter      :  /(.+Controller)\.js$/,
             excludeDirs :  /^\.(git|svn)$/
         });
-        // var Controllers = {};
-        // for(var i in controllers){
-        //     var x = new mongoose.Schema(controllers[i])
-        //     // Model[i] = mongoose.model(i, x)
-        // }
-        // return Model;
-        console.log(controllers);
         return controllers;
     }
 }

@@ -7,5 +7,8 @@ module.exports = {
 			res.status(200);
 			return res.json(data);
 		})
-    }
+	},
+	index: function(req, res, next){
+		return res.render("index", {host: req.protocol+'://'+req.headers.host || req.get('host'), section: "library"});
+	}
 }
