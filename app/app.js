@@ -24,6 +24,7 @@ var routes 			= require('./conf/route')(express.Router(), bundles.models('MongoD
 var logDirectory 	= path.join(__dirname, 'log'),
 	publicDirectory = path.join(__dirname, 'public');
 	assetsDirectory = path.join(__dirname, 'assets');
+var engines 		= require('consolidate');
 
 
 /*
@@ -51,9 +52,9 @@ app.use('/', routes);
 //   	err.status = 404;
 //   	next(err);
 // });
-
+app.engine('html', engines.ejs);
 app.set('views', __dirname+'/Views');
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.set('x-powered-by', 'Austin4Silvers');
 /*
 	1. Firing up the server
